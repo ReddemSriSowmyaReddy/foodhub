@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.example.foodhub.HelloController">
+
+    <!-- MENU -->
+    <left>
+        <ScrollPane prefWidth="520">
+            <VBox fx:id="menuVBox" spacing="10">
+                <padding>
+                    <Insets top="10" right="10" bottom="10" left="10"/>
+                </padding>
+            </VBox>
+        </ScrollPane>
+    </left>
+
+    <!-- BILL -->
+    <right>
+        <VBox spacing="10" prefWidth="360"
+              style="-fx-background-color: #E3F2FD;">
+            <padding>
+                <Insets top="10" right="10" bottom="10" left="10"/>
+            </padding>
+
+            <Label text="BILL"
+                   style="-fx-font-size: 18; -fx-font-weight: bold; -fx-text-fill: #0D47A1;"/>
+
+            <ScrollPane prefHeight="300">
+                <VBox fx:id="billVBox" spacing="5"/>
+            </ScrollPane>
+
+            <Label fx:id="subTotalLabel"/>
+            <Label fx:id="gstLabel"/>
+            <Label fx:id="taxLabel"/>
+            <Label fx:id="grandTotalLabel"
+                   style="-fx-font-weight: bold; -fx-text-fill: green;"/>
+
+            <ComboBox fx:id="paymentOption"/>
+
+            <HBox spacing="10">
+                <Button text="Generate Bill" onAction="#generateBill"/>
+                <Button text="Save Bill" onAction="#saveBill"/>
+            </HBox>
+        </VBox>
+    </right>
+
+</BorderPane>
+
+
